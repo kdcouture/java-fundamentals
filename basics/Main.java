@@ -55,9 +55,10 @@ public class Main{
     while(true){
       now = LocalDateTime.now();
       System.out.println(now.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+      // Stackoverflow recomended sleep function.
       try
       {
-          Thread.sleep(1000);
+          Thread.sleep(1000); // Sleeps for 1000 milliseconds.
       }
       catch(InterruptedException ex)
       {
