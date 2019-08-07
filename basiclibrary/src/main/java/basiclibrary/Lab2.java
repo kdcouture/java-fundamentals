@@ -54,19 +54,21 @@ public class Lab2 {
         return avg;
     }
 
-    public static double lowestAvg(int[][] inArrs) {
+    public static int[] lowestAvg(int[][] inArrs) {
         double minAvg = 9999;
+        int[] minArr = new int[] {};
         double curAvg;
         if(inArrs.length == 0){
-            return -1;
+            return new int[]{};
         }
         for(int i = 0; i < inArrs.length; i++) {
             curAvg = calcAvg((inArrs[i]));
             if(curAvg <= minAvg) {
                 minAvg = curAvg;
+                minArr = inArrs[i];
             }
         }
-        return minAvg;
+        return minArr;
     }
 
 
