@@ -1,5 +1,5 @@
 # This repo holds the first 10 java labs from codefellows 401.
-# Lab 2 - [basiclibrary]()
+# Lab 2 - [basiclibrary](https://github.com/kdcouture/java-fundamentals/tree/master/basiclibrary)
 ## Lab2.java
 - roll -- This function takes in an integer (n) and outputs an array length of (n) containing numbers between 1-6.
 - containsDuplicates -- This fuction takes in an integer array and outputs true if there are any duplicates and flase if there are not.
