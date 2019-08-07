@@ -4,7 +4,7 @@
 - roll -- This function takes in an integer (n) and outputs an array length of (n) containing numbers between 1-6.
 - containsDuplicates -- This fuction takes in an integer array and outputs true if there are any duplicates and flase if there are not.
 - calculate average -- This function takes in an integer array and outputs the average of the values.
-- calc. min average -- This function takes in a 2d integer array and outputs the min average for the smallest sub array.
+- calc. min average -- This function takes in a 2d integer array and outputs the array with the min avg.
 # Lab 1 - [basics](https://github.com/kdcouture/java-fundamentals/tree/master/basics)
 ## Main.java
 - pluralize -- This function takes in a string and an integer, outputs the string and adds an 's'  if needed.
