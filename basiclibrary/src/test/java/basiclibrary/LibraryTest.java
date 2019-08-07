@@ -18,4 +18,23 @@ public class LibraryTest {
         // Test min avg
         assertEquals(1.0, Lab2.lowestAvg(new int[][] {{1,1,1},{3,3,3},{9,9,9}}), .005);
     }
+
+    @Test public void failCases() {
+        // Verify roll output length is not off
+        assertNotEquals(4, Lab2.roll(3).length);
+        assertNotEquals(2, Lab2.roll(3).length);
+        // Check for missing division.
+        assertNotEquals(3.0, Lab2.calcAvg(new int[]{1,1,1}), .005);
+        // Check for wrong sub-array avg getting outputted.
+        assertNotEquals(3.0, Lab2.lowestAvg(new int[][] {{1,1,1},{3,3,3},{9,9,9}}), .005);
+        assertNotEquals(9.0, Lab2.lowestAvg(new int[][] {{1,1,1},{3,3,3},{9,9,9}}), .005);
+    }
+
+    @Test public void edgeCases() {
+        // Empty inputs
+        assertEquals(0, Lab2.roll(0).length);
+        assertFalse(Lab2.containsDuplicates(new int[]{}));
+        assertEquals(0.0, Lab2.calcAvg(new int[]{}), .005);
+        assertEquals(0.0, Lab2.lowestAvg(new int[][] {{}}), .005);
+    }
 }
