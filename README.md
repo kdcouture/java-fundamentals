@@ -3,7 +3,7 @@
 ## basicLibrary.java
 - analyzeWeather -- This function takes in a 2d integer array and computers the min, max and displays a list of values not seen in the input array's values.
 - tallyVotes -- This function takes in a List of Strings and our output is the String with the most occurences in the list.
-# linter 
+## linter 
 - [App.java](https://github.com/kdcouture/java-fundamentals/tree/master/linter/src/main/java/linter) -- The linter we made functions to check if lines that require a semi-colon actually have it present.
 # Lab 2 - [basiclibrary](https://github.com/kdcouture/java-fundamentals/tree/master/basiclibrary)
 ## Lab2.java
