@@ -5,33 +5,86 @@ package basiclibrary;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.util.*;
 
 public class LibraryTest {
-    @Test public void testSafe() {
-        // Test to see if roll produces the correct length of array.
-        assertEquals(4, Lab2.roll(4).length);
-        // Test Duplicates
-        assertTrue(Lab2.containsDuplicates(new int[]{1,2,3,4,4,5}));
-        assertFalse(Lab2.containsDuplicates(new int[]{1,2,3,4,5,6}));
-        // Test avg calc
-        assertEquals(1.0, Lab2.calcAvg(new int[]{1,1,1}), .005);
-        // Test min avg
-        assertArrayEquals(new int[]{1,1,1}, Lab2.lowestAvg(new int[][] {{1,1,1},{3,3,3},{9,9,9}}));
+    // -------      Lab 3 tests      ------
+    @Test public void testWeather(){
+        // Daily average temperatures for Seattle, October 1-28 2017
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        String result = "High: 72\nLow: 51\nNever saw temperature: 63\nNever saw temperature: 67\nNever saw temperature: 68\nNever saw temperature: 69\n";
+        System.out.println(basicLibrary.analyzeWeather(weeklyMonthTemperatures));
+        assertTrue(basicLibrary.analyzeWeather(weeklyMonthTemperatures).equals(result));
     }
 
-    @Test public void failCases() {
-        // Verify roll output length is not off
-        assertNotEquals(4, Lab2.roll(3).length);
-        assertNotEquals(2, Lab2.roll(3).length);
-        // Check for missing division.
-        assertNotEquals(3.0, Lab2.calcAvg(new int[]{1,1,1}), .005);
+    @Test public void testWeatherEdge() {
+        String result = "High: -9999\nLow: 9999\n";
+        System.out.println(basicLibrary.analyzeWeather(new int[0][]));
+        assertTrue(basicLibrary.analyzeWeather(new int[0][]).equals(result));
     }
 
-    @Test public void edgeCases() {
-        // Empty inputs
-        assertEquals(0, Lab2.roll(0).length);
-        assertFalse(Lab2.containsDuplicates(new int[]{}));
-        assertEquals(0.0, Lab2.calcAvg(new int[]{}), .005);
-        assertArrayEquals(new int[]{}, Lab2.lowestAvg(new int[][] {{}}));
+    @Test public void testTallyVotes(){
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+        assertTrue(basicLibrary.tallyVotes(votes).equals("Bush"));
+        System.out.println("The most votes goes to " + basicLibrary.tallyVotes(votes));
+
+        List<String> votes2 = new ArrayList<>();
+        votes2.add("Kevin");
+        votes2.add("Kevin");
+        votes2.add("Kevin");
+        votes2.add("Kevin");
+        votes2.add("Kevin");
+        votes2.add("Shrub");
+        votes2.add("Bush");
+        votes2.add("Hedge");
+        votes2.add("Bush");
+        System.out.println("The most votes goes to " + basicLibrary.tallyVotes(votes2));
+        assertTrue(basicLibrary.tallyVotes(votes2).equals("Kevin"));
     }
+
+    @Test public void testTallyEdge() {
+        assertTrue(basicLibrary.tallyVotes(new ArrayList<String>()).equals(""));
+    }
+    // ----     Lab 2 Tests     ----
+//    @Test public void testSafe() {
+//        // Test to see if roll produces the correct length of array.
+//        assertEquals(4, basicLibrary.roll(4).length);
+//        // Test Duplicates
+//        assertTrue(basicLibrary.containsDuplicates(new int[]{1,2,3,4,4,5}));
+//        assertFalse(basicLibrary.containsDuplicates(new int[]{1,2,3,4,5,6}));
+//        // Test avg calc
+//        assertEquals(1.0, basicLibrary.calcAvg(new int[]{1,1,1}), .005);
+//        // Test min avg
+//        assertArrayEquals(new int[]{1,1,1}, basicLibrary.lowestAvg(new int[][] {{1,1,1},{3,3,3},{9,9,9}}));
+//    }
+//
+//    @Test public void failCases() {
+//        // Verify roll output length is not off
+//        assertNotEquals(4, basicLibrary.roll(3).length);
+//        assertNotEquals(2, basicLibrary.roll(3).length);
+//        // Check for missing division.
+//        assertNotEquals(3.0, basicLibrary.calcAvg(new int[]{1,1,1}), .005);
+//    }
+//
+//    @Test public void edgeCases() {
+//        // Empty inputs
+//        assertEquals(0, basicLibrary.roll(0).length);
+//        assertFalse(basicLibrary.containsDuplicates(new int[]{}));
+//        assertEquals(0.0, basicLibrary.calcAvg(new int[]{}), .005);
+//        assertArrayEquals(new int[]{}, basicLibrary.lowestAvg(new int[][] {{}}));
+//    }
 }
