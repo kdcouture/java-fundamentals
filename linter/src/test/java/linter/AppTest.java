@@ -8,6 +8,13 @@ import static org.junit.Assert.*;
 
 public class AppTest {
     @Test public void testLinter() {
+        System.out.println("cleanFile.js test [No Errors]");
+        App.linterFile("./src/main/resources/cleanFile.js");
+        System.out.println("oneError.js test [One Error]");
+        App.linterFile("./src/main/resources/oneError.js");
+        System.out.println("fewError.js [Few Errors]");
+        App.linterFile("./src/main/resources/fewErrors.js");
+        System.out.println("gates.js test [Many Errors]");
         App.linterFile("./src/main/resources/gates.js");
     }
 }

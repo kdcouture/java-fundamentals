@@ -29,7 +29,6 @@ public class App {
                     }
                     else if(line.charAt(line.length()-1) == '{' || line.charAt(line.length()-1) == '}') {
                         continue;
-//                        System.out.println("Line " + lineCount + ": Missing '{' or '}' ");
                     }
                     else {
                         System.out.println("Line " + lineCount + ": Missing semi-colon");
