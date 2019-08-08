@@ -32,8 +32,8 @@ public class basicLibrary {
                 }
             }
         }
-        System.out.println("High: " + max);
-        System.out.println("Low: " + min);
+        retStr += "High: " + max;
+        retStr += "\nLow: " + min + "\n";
         for(int k = min; k < max; k++){
             if(!set.contains(k)){
                 retStr += "Never saw temperature: " + k + "\n";

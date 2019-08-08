@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 import java.util.*;
 
 public class LibraryTest {
-    // -------      Lab 3       ------
+    // -------      Lab 3 tests      ------
     @Test public void testWeather(){
         // Daily average temperatures for Seattle, October 1-28 2017
         int[][] weeklyMonthTemperatures = {
@@ -17,7 +17,15 @@ public class LibraryTest {
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 55, 62, 57}
         };
+        String result = "High: 72\nLow: 51\nNever saw temperature: 63\nNever saw temperature: 67\nNever saw temperature: 68\nNever saw temperature: 69\n";
         System.out.println(basicLibrary.analyzeWeather(weeklyMonthTemperatures));
+        assertTrue(basicLibrary.analyzeWeather(weeklyMonthTemperatures).equals(result));
+    }
+
+    @Test public void testWeatherEdge() {
+        String result = "High: -9999\nLow: 9999\n";
+        System.out.println(basicLibrary.analyzeWeather(new int[0][]));
+        assertTrue(basicLibrary.analyzeWeather(new int[0][]).equals(result));
     }
 
     @Test public void testTallyVotes(){
@@ -31,8 +39,27 @@ public class LibraryTest {
         votes.add("Bush");
         votes.add("Hedge");
         votes.add("Bush");
+        assertTrue(basicLibrary.tallyVotes(votes).equals("Bush"));
         System.out.println("The most votes goes to " + basicLibrary.tallyVotes(votes));
+
+        List<String> votes2 = new ArrayList<>();
+        votes2.add("Kevin");
+        votes2.add("Kevin");
+        votes2.add("Kevin");
+        votes2.add("Kevin");
+        votes2.add("Kevin");
+        votes2.add("Shrub");
+        votes2.add("Bush");
+        votes2.add("Hedge");
+        votes2.add("Bush");
+        System.out.println("The most votes goes to " + basicLibrary.tallyVotes(votes2));
+        assertTrue(basicLibrary.tallyVotes(votes2).equals("Kevin"));
     }
+
+    @Test public void testTallyEdge() {
+        assertTrue(basicLibrary.tallyVotes(new ArrayList<String>()).equals(""));
+    }
+    // ----     Lab 2 Tests     ----
 //    @Test public void testSafe() {
 //        // Test to see if roll produces the correct length of array.
 //        assertEquals(4, basicLibrary.roll(4).length);
