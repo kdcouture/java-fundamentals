@@ -5,33 +5,59 @@ package basiclibrary;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.util.*;
 
 public class LibraryTest {
     @Test public void testSafe() {
         // Test to see if roll produces the correct length of array.
-        assertEquals(4, Lab2.roll(4).length);
+        assertEquals(4, basicLibrary.roll(4).length);
         // Test Duplicates
-        assertTrue(Lab2.containsDuplicates(new int[]{1,2,3,4,4,5}));
-        assertFalse(Lab2.containsDuplicates(new int[]{1,2,3,4,5,6}));
+        assertTrue(basicLibrary.containsDuplicates(new int[]{1,2,3,4,4,5}));
+        assertFalse(basicLibrary.containsDuplicates(new int[]{1,2,3,4,5,6}));
         // Test avg calc
-        assertEquals(1.0, Lab2.calcAvg(new int[]{1,1,1}), .005);
+        assertEquals(1.0, basicLibrary.calcAvg(new int[]{1,1,1}), .005);
         // Test min avg
-        assertArrayEquals(new int[]{1,1,1}, Lab2.lowestAvg(new int[][] {{1,1,1},{3,3,3},{9,9,9}}));
+        assertArrayEquals(new int[]{1,1,1}, basicLibrary.lowestAvg(new int[][] {{1,1,1},{3,3,3},{9,9,9}}));
     }
 
     @Test public void failCases() {
         // Verify roll output length is not off
-        assertNotEquals(4, Lab2.roll(3).length);
-        assertNotEquals(2, Lab2.roll(3).length);
+        assertNotEquals(4, basicLibrary.roll(3).length);
+        assertNotEquals(2, basicLibrary.roll(3).length);
         // Check for missing division.
-        assertNotEquals(3.0, Lab2.calcAvg(new int[]{1,1,1}), .005);
+        assertNotEquals(3.0, basicLibrary.calcAvg(new int[]{1,1,1}), .005);
     }
 
     @Test public void edgeCases() {
         // Empty inputs
-        assertEquals(0, Lab2.roll(0).length);
-        assertFalse(Lab2.containsDuplicates(new int[]{}));
-        assertEquals(0.0, Lab2.calcAvg(new int[]{}), .005);
-        assertArrayEquals(new int[]{}, Lab2.lowestAvg(new int[][] {{}}));
+        assertEquals(0, basicLibrary.roll(0).length);
+        assertFalse(basicLibrary.containsDuplicates(new int[]{}));
+        assertEquals(0.0, basicLibrary.calcAvg(new int[]{}), .005);
+        assertArrayEquals(new int[]{}, basicLibrary.lowestAvg(new int[][] {{}}));
+    }
+
+    @Test public void testWeather(){
+        // Daily average temperatures for Seattle, October 1-28 2017
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        System.out.println(basicLibrary.analzeWeather(weeklyMonthTemperatures));
+    }
+
+    @Test public void testTallyVotes(){
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+        System.out.println("The most votes goes to " + basicLibrary.tallyVotes(votes));
     }
 }
