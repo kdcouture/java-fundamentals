@@ -1,5 +1,5 @@
 # This repo holds the first 10 java labs from codefellows 401.
-# Lab 6 - [Inheritance]()
+# Lab 6 - [Inheritance](https://github.com/kdcouture/java-fundamentals/tree/master/inheritance/src/main/java/inheritance)
 ## Restaurant.java
 - This file holds the Restaurant class and its related methods.
 --- 
