@@ -1,4 +1,15 @@
 # This repo holds the first 10 java labs from codefellows 401.
+# Lab 6 - [Inheritance]()
+## Restaurant.java
+- This file holds the Restaurant class and its related methods.
+--- 
+- addReview -- This method adds a review to the Restaurant class instance.
+- updateStars -- This method helps the addReview method to keep the start rating correct.
+- toString -- This method returns a string about the restaurant object.
+## Review.java
+- This file holds information regarding the Review class.
+---
+- toString -- This function returns a string with info about the review instance. 
 # Lab 3 - [basiclibrary](https://github.com/kdcouture/java-fundamentals/tree/master/basiclibrary)
 ## basicLibrary.java
 - analyzeWeather -- This function takes in a 2d integer array and computers the min, max and displays a list of values not seen in the input array's values.
