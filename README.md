@@ -7,7 +7,7 @@
 - updateStars -- This method helps the addReview method to keep the start rating correct.
 ---
 ## Restaurant.java
-- This file holds the Restaurant class and its related methods. Extends ReviewableBusiness.
+- This file holds the Restaurant class and its related methods. Additional String attribute price. Extends ReviewableBusiness.
 ---
 - toString -- This method returns a string about the Restaurant object.
 ---
