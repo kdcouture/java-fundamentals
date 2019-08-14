@@ -16,6 +16,6 @@ public class Review {
     // Methods
 
     public String toString() {
-        return "Author: " + this.author + "\t||\tRating: " + this.stars + "\nBody: \t" + body;
+        return "Author: " + this.author + "\t||\tRating: " + this.stars + "\nBody: \t" + body + "\n";
     }
 }

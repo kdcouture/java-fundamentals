@@ -5,18 +5,9 @@ package inheritance;
 
 import java.util.ArrayList;
 
-public class Restaurant {
-    public static void main(String[] args) {
-        Restaurant testaurant = new Restaurant("testaurant", 3, "$$");
-        testaurant.addReview(new Review("Bubbles", "Decent", 5));
-        testaurant.addReview(new Review("Bubbles", "Decent", 3));
-        System.out.println(testaurant.toString());
-    }
+public class Restaurant extends ReviewableBusiness {
     // Attributes
-    public String name;
-    public double stars;
     public String price;
-    public ArrayList<Review> reviews;
 
     // Constructors
     public Restaurant(String name, double stars, String price) {
@@ -25,23 +16,9 @@ public class Restaurant {
         this.price = price;
         this.reviews = new ArrayList<Review>();
     }
-    
-    public void addReview(Review r) {
-        this.reviews.add(r);
-        this.updateStars();
-    }
-    
-    public void updateStars() {
-        double starcount = 0;
-        for (Review rev: this.reviews) {
-            starcount += rev.stars;
-        }
-        this.stars = (starcount/(this.reviews.size()));
-    }
 
     // Methods
     public String toString(){
-        //System.out.println("Restaurant name: " + this.name + " Stars: " + this.stars + " Price: " + this.price + "\n" + reviews.toString());
         return ("Restaurant name: " + this.name + " Stars: " + this.stars + " Price: " + this.price + "\n" + reviews.toString());
     }
 }
