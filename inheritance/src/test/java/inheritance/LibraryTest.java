@@ -49,6 +49,12 @@ public class LibraryTest {
         assertEquals("Trailer Park Boys","Trailer Park Boys", testTheater.reviews.get(0).movie);
     }
 
+    @Test public void testAddMovie() {
+        Theater testTheater = new Theater("Theater", 5);
+        testTheater.addMovie("Trailer Park Boys");
+        assertEquals("Trailer Park Boys", "Trailer Park Boys", testTheater.movies.get(0));
+    }
+
     @Test public void testStarsRestaurant() {
         Restaurant testaurant = new Restaurant("testaurant", 3, "$$");
         assertEquals("5", 3, testaurant.stars, .00005);
